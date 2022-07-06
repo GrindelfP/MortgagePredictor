@@ -32,7 +32,7 @@ namespace MortgagePredictor
             subject.Mortgage.Amount = _apartmentCost;
             for (var i = 0; i < numberOfMonths; i++)
             {
-                if (subject.Mortgage.Amount != 0) PayMortgage(subject);
+                if (subject.Mortgage.Amount != 0) subject.PayMortgage(_freeMoney);
                 else subject.BankDeposit.IncreaseBalance(_freeMoney);
                 subject.BankDeposit.AddMonthlyInterest();
                 resultingData[i] = new ResultData(subject.BankDeposit.Balance, i + 1);
@@ -52,7 +52,7 @@ namespace MortgagePredictor
                     subject.BankDeposit.DecreaseBalance(_apartmentCost * stepOfDelay * 0.1);
                     subject.HasAnApartment = true;
                 }
-                if (subject.Mortgage.Amount != 0) PayMortgage(subject);
+                if (subject.Mortgage.Amount != 0) subject.PayMortgage(_freeMoney);
                 else subject.BankDeposit.IncreaseBalance(_freeMoney);
                 subject.BankDeposit.AddMonthlyInterest();
                 resultingData[i] = new ResultData(subject.BankDeposit.Balance, i + 1);
@@ -79,16 +79,6 @@ namespace MortgagePredictor
             }
 
             return resultingData;
-        }
-
-        private void PayMortgage(TestSubject subject)
-        {
-            subject.Mortgage.DecreaseMortgage(_freeMoney);
-            if (subject.Mortgage.Amount < 0)
-            {
-                subject.BankDeposit.IncreaseBalance(-subject.Mortgage.Amount);
-                subject.Mortgage.Amount = 0;
-            }
         }
 
         private List<TestSubject> InitializeTestSubjectsGroup(double mortgagePercentage, double debetPercentage)
