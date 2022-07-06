@@ -12,6 +12,7 @@ namespace MortgagePredictor
         public List<List<ResultData>> Simulate(int numberOfMonths)
         {
             var theResult = new List<List<ResultData>>();
+            for (var i = 0; i < _testSubjectsGroup.Count; i++) theResult.Add(new List<ResultData>());
 
             // Simulation of Instant Mortgage Taker
             theResult[0] = SimulateInstantMortgageTaker(numberOfMonths);
@@ -28,6 +29,7 @@ namespace MortgagePredictor
         private List<ResultData> SimulateInstantMortgageTaker(int numberOfMonths)
         {
             var resultingData = new List<ResultData>();
+            for (var i = 0; i < numberOfMonths; i++) resultingData.Add(new ResultData());
             var subject = _testSubjectsGroup[0];
             subject.Mortgage.Amount = _apartmentCost;
             for (var i = 0; i < numberOfMonths; i++)
@@ -35,7 +37,8 @@ namespace MortgagePredictor
                 if (subject.Mortgage.Amount != 0) subject.PayMortgage(_freeMoney);
                 else subject.BankDeposit.IncreaseBalance(_freeMoney);
                 subject.BankDeposit.AddMonthlyInterest();
-                resultingData[i] = new ResultData(subject.BankDeposit.Balance, i + 1);
+                resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
+                resultingData[i].MonthNumber = i + 1;
             }
                         
             return resultingData;
@@ -43,6 +46,7 @@ namespace MortgagePredictor
         private List<ResultData> SimulateDelayedMortgageTaker(int numberOfMonths, int stepOfDelay)
         {
             var resultingData = new List<ResultData>();
+            for (var i = 0; i < numberOfMonths; i++) resultingData.Add(new ResultData());
             var subject = _testSubjectsGroup[stepOfDelay];
             for (var i = 0; i < numberOfMonths; i++)
             {
@@ -55,7 +59,8 @@ namespace MortgagePredictor
                 if (subject.Mortgage.Amount != 0) subject.PayMortgage(_freeMoney);
                 else subject.BankDeposit.IncreaseBalance(_freeMoney);
                 subject.BankDeposit.AddMonthlyInterest();
-                resultingData[i] = new ResultData(subject.BankDeposit.Balance, i + 1);
+                resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
+                resultingData[i].MonthNumber = i + 1;
             }
 
             return resultingData;
@@ -64,6 +69,7 @@ namespace MortgagePredictor
         private List<ResultData> SimulateNoMortgageTaker(int numberOfMonths)
         {
             var resultingData = new List<ResultData>();
+            for (var i = 0; i < numberOfMonths; i++) resultingData.Add(new ResultData());
             var subject = _testSubjectsGroup[_testSubjectsGroup.Count - 1];
             for (var i = 0; i < numberOfMonths; i++)
             {
@@ -75,7 +81,8 @@ namespace MortgagePredictor
                 if (!subject.HasAnApartment) subject.BankDeposit.IncreaseBalance(_freeMoney - _rentAmount);
                 else subject.BankDeposit.IncreaseBalance(_freeMoney);
                 subject.BankDeposit.AddMonthlyInterest();
-                resultingData[i] = new ResultData(subject.BankDeposit.Balance, i + 1);
+                resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
+                resultingData[i].MonthNumber = i + 1;
             }
 
             return resultingData;
