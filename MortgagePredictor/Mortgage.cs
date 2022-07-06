@@ -4,7 +4,10 @@
     {
         public double Amount { get; set; }
         public double Percentage { get; }
-        public double DecreaseMortgage(double fullDecrement) => Amount - (fullDecrement - Amount * Percentage / 12);
+        public void DecreaseMortgage(double fullDecrement)
+        {
+            Amount -= fullDecrement - Amount * Percentage / 12;
+        } 
         public Mortgage(double amount, double percentage)
         {
             Amount = amount;

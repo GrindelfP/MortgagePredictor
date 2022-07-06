@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MortgagePredictor
 {
@@ -9,7 +10,7 @@ namespace MortgagePredictor
         private readonly double _freeMoney;
         private readonly List<TestSubject> _testSubjectsGroup;
 
-        public List<List<ResultData>> Simulate(int numberOfMonths)
+        public List<List<ResultData>> ProcessSimulation(int numberOfMonths)
         {
             var theResult = new List<List<ResultData>>();
             for (var i = 0; i < _testSubjectsGroup.Count; i++) theResult.Add(new List<ResultData>());
@@ -57,6 +58,7 @@ namespace MortgagePredictor
                     subject.HasAnApartment = true;
                 }
                 if (subject.Mortgage.Amount != 0) subject.PayMortgage(_freeMoney);
+                else if (!subject.HasAnApartment) subject.BankDeposit.IncreaseBalance(_freeMoney - _rentAmount);
                 else subject.BankDeposit.IncreaseBalance(_freeMoney);
                 subject.BankDeposit.AddMonthlyInterest();
                 resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
