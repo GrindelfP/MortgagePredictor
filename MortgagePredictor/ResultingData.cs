@@ -2,7 +2,12 @@ namespace MortgagePredictor
 {
     internal struct ResultData
     {
-        internal double DebetAcountAmount { get; set; }
-        internal int MonthNumber { get; set; }
+        internal double DebetAcountBalance { get; }
+        internal int MonthNumber { get; }
+        public ResultData(double debetAcountBalance, int monthNumber)
+        {
+            DebetAcountBalance = debetAcountBalance;
+            MonthNumber = monthNumber;
+        }
     }
 }

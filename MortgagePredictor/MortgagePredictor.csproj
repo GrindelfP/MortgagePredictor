@@ -53,10 +53,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FreeMoney.cs" />
     <Compile Include="Mortgage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultingData.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="TestSubject.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

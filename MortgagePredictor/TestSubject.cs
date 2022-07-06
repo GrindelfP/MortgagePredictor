@@ -2,17 +2,13 @@
 {
     internal class TestSubject
     {
-        public double ApartmentCost { get; }
-        public double RentAmount { get; }
-        public FreeMoney FreeMoney { get; }
+        public bool HasAnApartment { get; set; }
         public Mortgage Mortgage { get; }
         public BankDeposit BankDeposit { get; } 
 
-        public TestSubject(double apartmentCost, double rentAmount, FreeMoney freeMoney, Mortgage mortgage, BankDeposit bankDeposit)
+        public TestSubject(Mortgage mortgage, BankDeposit bankDeposit)
         {
-            ApartmentCost = apartmentCost;
-            RentAmount = rentAmount;
-            FreeMoney = freeMoney;
+            HasAnApartment = false;
             Mortgage = mortgage;
             BankDeposit = bankDeposit;
         }
