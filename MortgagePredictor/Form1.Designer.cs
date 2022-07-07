@@ -52,6 +52,7 @@
             this.ApartmentPrice = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.ResultsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ResultTextBox = new System.Windows.Forms.TextBox();
             this.mainControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FreeMoney)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfMonth)).BeginInit();
@@ -407,11 +408,21 @@
             this.ResultsChart.TabIndex = 1;
             this.ResultsChart.Text = "chart1";
             // 
+            // textBox1
+            // 
+            this.ResultTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultTextBox.Location = new System.Drawing.Point(13, 439);
+            this.ResultTextBox.Multiline = true;
+            this.ResultTextBox.Name = "textBox1";
+            this.ResultTextBox.Size = new System.Drawing.Size(946, 188);
+            this.ResultTextBox.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 459);
+            this.ClientSize = new System.Drawing.Size(971, 639);
+            this.Controls.Add(this.ResultTextBox);
             this.Controls.Add(this.ResultsChart);
             this.Controls.Add(this.mainControls);
             this.Name = "Form1";
@@ -426,6 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ApartmentPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResultsChart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -452,6 +464,7 @@
         private System.Windows.Forms.NumericUpDown FreeMoney;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataVisualization.Charting.Chart ResultsChart;
+        private System.Windows.Forms.TextBox ResultTextBox;
     }
 }
 

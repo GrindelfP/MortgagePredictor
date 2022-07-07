@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MortgagePredictor
 {
@@ -33,6 +32,7 @@ namespace MortgagePredictor
             for (var i = 0; i < numberOfMonths; i++) resultingData.Add(new ResultData());
             var subject = _testSubjectsGroup[0];
             subject.Mortgage.Amount = _apartmentCost;
+            subject.HasAnApartment = true;
             for (var i = 0; i < numberOfMonths; i++)
             {
                 if (subject.Mortgage.Amount != 0) subject.PayMortgage(_freeMoney);
@@ -40,6 +40,7 @@ namespace MortgagePredictor
                 subject.BankDeposit.AddMonthlyInterest();
                 resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
                 resultingData[i].MonthNumber = i + 1;
+                resultingData[i].HasAnApartment = subject.HasAnApartment;
             }
                         
             return resultingData;
@@ -63,6 +64,7 @@ namespace MortgagePredictor
                 subject.BankDeposit.AddMonthlyInterest();
                 resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
                 resultingData[i].MonthNumber = i + 1;
+                resultingData[i].HasAnApartment = subject.HasAnApartment;
             }
 
             return resultingData;
@@ -85,6 +87,7 @@ namespace MortgagePredictor
                 subject.BankDeposit.AddMonthlyInterest();
                 resultingData[i].DebetAcountBalance = subject.BankDeposit.Balance;
                 resultingData[i].MonthNumber = i + 1;
+                resultingData[i].HasAnApartment = subject.HasAnApartment;
             }
 
             return resultingData;
