@@ -20,8 +20,8 @@ namespace MortgagePredictor
             var apartmentPrice = Convert.ToDouble(ApartmentPrice.Value);
             var rentAmount = Convert.ToDouble(RentAmount.Value);
             var freeMoney = Convert.ToDouble(FreeMoney.Value);
-            var mortgagePercentage = Convert.ToDouble(MortgagePercentage.Value);
-            var debetPercentage = Convert.ToDouble(DebetPercentage.Value);
+            var mortgagePercentage = Convert.ToDouble(MortgagePercentage.Value) * .01;
+            var debetPercentage = Convert.ToDouble(DebetPercentage.Value) * .01;
             _simulation = new Simulation(apartmentPrice, rentAmount, freeMoney, mortgagePercentage, debetPercentage);
 
             var numberOfMonths = Convert.ToInt32(NumberOfMonth.Value);

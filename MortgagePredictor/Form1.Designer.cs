@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.mainControls = new System.Windows.Forms.GroupBox();
             this.Run = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -210,23 +210,17 @@
             // 
             // DebetPercentage
             // 
-            this.DebetPercentage.DecimalPlaces = 2;
-            this.DebetPercentage.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             this.DebetPercentage.Location = new System.Drawing.Point(7, 195);
             this.DebetPercentage.Maximum = new decimal(new int[] {
-            2,
+            20,
             0,
             0,
-            65536});
+            0});
             this.DebetPercentage.Minimum = new decimal(new int[] {
             2,
             0,
             0,
-            131072});
+            0});
             this.DebetPercentage.Name = "DebetPercentage";
             this.DebetPercentage.Size = new System.Drawing.Size(120, 20);
             this.DebetPercentage.TabIndex = 10;
@@ -235,7 +229,7 @@
             2,
             0,
             0,
-            131072});
+            0});
             // 
             // label6
             // 
@@ -259,23 +253,17 @@
             // 
             // MortgagePercentage
             // 
-            this.MortgagePercentage.DecimalPlaces = 2;
-            this.MortgagePercentage.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             this.MortgagePercentage.Location = new System.Drawing.Point(9, 137);
             this.MortgagePercentage.Maximum = new decimal(new int[] {
-            2,
+            20,
             0,
             0,
-            65536});
+            0});
             this.MortgagePercentage.Minimum = new decimal(new int[] {
             2,
             0,
             0,
-            131072});
+            0});
             this.MortgagePercentage.Name = "MortgagePercentage";
             this.MortgagePercentage.Size = new System.Drawing.Size(120, 20);
             this.MortgagePercentage.TabIndex = 7;
@@ -284,7 +272,7 @@
             2,
             0,
             0,
-            131072});
+            0});
             // 
             // label8
             // 
@@ -394,26 +382,26 @@
             // 
             // ResultsChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.ResultsChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ResultsChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.ResultsChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ResultsChart.Legends.Add(legend1);
             this.ResultsChart.Location = new System.Drawing.Point(13, 13);
             this.ResultsChart.Name = "ResultsChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.ResultsChart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ResultsChart.Series.Add(series1);
             this.ResultsChart.Size = new System.Drawing.Size(740, 419);
             this.ResultsChart.TabIndex = 1;
             this.ResultsChart.Text = "chart1";
             // 
-            // textBox1
+            // ResultTextBox
             // 
             this.ResultTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResultTextBox.Location = new System.Drawing.Point(13, 439);
             this.ResultTextBox.Multiline = true;
-            this.ResultTextBox.Name = "textBox1";
+            this.ResultTextBox.Name = "ResultTextBox";
             this.ResultTextBox.Size = new System.Drawing.Size(946, 188);
             this.ResultTextBox.TabIndex = 2;
             // 
