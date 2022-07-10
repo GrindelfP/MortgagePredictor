@@ -1,8 +1,8 @@
 ﻿namespace MortgagePredictor
 {
-    internal class TestSubject
+    internal class Loaner
     {
-        public bool HasAnApartment { get; set; }
+        public bool HasApartment { get; set; }
         public Mortgage Mortgage { get; }
         public BankDeposit BankDeposit { get; }
 
@@ -16,9 +16,9 @@
             }
         }
 
-        public TestSubject(Mortgage mortgage, BankDeposit bankDeposit)
+        public Loaner(Mortgage mortgage, BankDeposit bankDeposit)
         {
-            HasAnApartment = false;
+            HasApartment = false;
             Mortgage = mortgage;
             BankDeposit = bankDeposit;
         }

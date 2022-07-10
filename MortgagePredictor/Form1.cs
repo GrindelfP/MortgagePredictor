@@ -10,6 +10,7 @@ namespace MortgagePredictor
         public Form1()
         {
             InitializeComponent();
+            ResultsChart.Series.Clear();
         }
 
         private void Run_Click(object sender, EventArgs e)
@@ -34,14 +35,14 @@ namespace MortgagePredictor
                 for (var j = 0; j < resultsOfSimulation[i].Count; j++)
                 {
                     ResultsChart.Series[i].ChartType = SeriesChartType.Line;
-                    ResultsChart.Series[i].Points.AddY(resultsOfSimulation[i][j].DebetAcountBalance);
+                    ResultsChart.Series[i].Points.AddY(resultsOfSimulation[i][j].DebetAccountBalance);
                     ResultsChart.Series[i].Name = Convert.ToString(i * 10) + "% первоначального взноса";
                 }
-                var finalDebetBalance = Math.Round(resultsOfSimulation[i][resultsOfSimulation[i].Count - 1].DebetAcountBalance, 2);
+                var finalDebetBalance = Math.Round(resultsOfSimulation[i][resultsOfSimulation[i].Count - 1].DebetAccountBalance, 2);
                 if (i == 0) message += Convert.ToString(i * 10) + "%     первоначального взноса: " + Convert.ToString(finalDebetBalance);
                 else if (i < 10) message += Convert.ToString(i * 10) + "%   первоначального взноса: " + Convert.ToString(finalDebetBalance);
                 else message += Convert.ToString(i * 10) + "% первоначального взноса: " + Convert.ToString(finalDebetBalance);
-                message += resultsOfSimulation[i][resultsOfSimulation[i].Count - 1].HasAnApartment ? " Квартира куплена\r\n" : " Квартира не куплена\r\n";
+                message += resultsOfSimulation[i][resultsOfSimulation[i].Count - 1].HasApartment ? " Квартира куплена\r\n" : " Квартира не куплена\r\n";
             }
             
             ResultTextBox.Text += message;

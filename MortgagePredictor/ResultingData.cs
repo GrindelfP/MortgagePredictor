@@ -2,20 +2,14 @@ namespace MortgagePredictor
 {
     internal class ResultData
     {
-        internal double DebetAcountBalance { get; set; }
+        internal double DebetAccountBalance { get; set; }
         internal int MonthNumber { get; set; }
-        internal bool HasAnApartment { get; set; }
+        internal bool HasApartment { get; set; }
         public ResultData()
         {
-            DebetAcountBalance = 0;
+            DebetAccountBalance = 0;
             MonthNumber = 0;
-            HasAnApartment = false;
-        }
-        public ResultData(double debetAcountBalance, int monthNumber, bool hasAnApartment)
-        {
-            DebetAcountBalance = debetAcountBalance;
-            MonthNumber = monthNumber;
-            HasAnApartment = hasAnApartment;
+            HasApartment = false;
         }
     }
 }

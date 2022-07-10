@@ -10,7 +10,7 @@
             return Balance;
         }
 
-        public double IncreaseBalance(double increment) 
+        public double IncreaseBalance(double increment)
         {
             Balance += increment;
             return Balance;
